@@ -1,0 +1,42 @@
+{
+  "name": "url-shorter-service",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Url shorter service",
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf dist && tsc -p tsconfig.build.json",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "start": "ts-node -r tsconfig-paths/register src/main.ts",
+    "start:dev": "tsc-watch -p tsconfig.build.json --onSuccess \"node dist/main.js\"",
+    "start:debug": "tsc-watch -p tsconfig.build.json --onSuccess \"node --inspect-brk dist/main.js\"",
+    "start:prod": "node dist/main.js",
+    "lint": "tslint -p tsconfig.json -c tslint.json"
+  },
+  "dependencies": {
+    "@nestjs/common": "^6.5.3",
+    "@nestjs/core": "^6.5.3",
+    "@nestjs/microservices": "^6.5.3",
+    "@nestjs/platform-express": "^6.5.3",
+    "@nestjs/websockets": "^6.5.3",
+    "@types/redis": "2.8.13",
+    "dotenv": "^8.1.0",
+    "hbs": "^4.0.4",
+    "redis": "2.8.0",
+    "body-parser": "1.19.0",
+    "reflect-metadata": "0.1.13",
+    "randomstring": "1.1.5",
+    "rimraf": "3.0.0",
+    "rxjs": "6.5.2"
+  },
+  "devDependencies": {
+    "@types/express": "4.17.1",
+    "@types/node": "12.7.2",
+    "prettier": "1.18.2",
+    "ts-node": "8.3.0",
+    "tsc-watch": "2.4.0",
+    "tsconfig-paths": "3.8.0",
+    "tslint": "5.18.0",
+    "typescript": "3.5.3"
+  }
+}
